@@ -1,0 +1,48 @@
+{% extends 'basic.html' %}
+{% block title %}CV{% endblock%}
+{% block page_head_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/cv.css') }}">{% endblock %}
+{% block page_head_js %}<script src="{{ url_for('static', filename='js/cv.js') }}"></script> {% endblock %}
+{% block details %}
+    {{  super() }}
+    <div id="GridContainer">
+
+        <div id="item1">
+            <h1>Sapir Lulvi - CV</h1> 
+            <h2>About</h2>
+            <p>
+                Fourth year industrial engineering & management student. <br>
+                A quick learner and a strong team player with interpersonal skills.<br>
+                Motivated with a strong result- focused approach, a positive attitude and dedication
+                for excellence.
+            </p>
+            <h2>Education</h2>
+            <p>
+                Fourth year B.Sc. Industrial Engineering
+                And Management, Ben-Gurion University
+            </p>
+            <h2>Details</h2>
+            <p>
+                Phone: 052-9506950
+                Email: sapir.lulvi@gmail.com
+            </p>
+        </div>    
+
+        <div id="item2">
+            <h2>Contact</h2>
+            <form>
+                <label for="fname">Full Name:</label><br>
+                <input type="text" id="fname" name ="fname" required><br><br>
+                <label for="company">Company:</label><br>
+                <input type="text" id="company" name ="company" required><br><br>
+                <label for="Email">Email:</label><br>
+                <input type="email" id="Email" name ="Email" required><br><br>
+                <p id="note1"></p>
+                <label for="comment">Your Comment:</label><br>
+                <textarea id="comment" name="comment" rows="4" cols="30" minlength="10" maxlength="20" required></textarea><br>
+                <p id="note2"></p>
+                <button id="Button"  onclick="checkValid1('Email','note1'),checkValid2('comment','note2')">Send</button>
+            </form> 
+        </div>
+    </div>    
+
+{% endblock %}

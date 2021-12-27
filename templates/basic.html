@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block page_head_css %}{% endblock %}
+    {% block page_head_js %}{% endblock %}
+</head>
+<body>
+{% include 'header.html' %}
+{% block details %}
+    {% if session.nickN %}
+        <h1>Hello, {{ session.nickN }}</h1>
+    {% endif %}
+{% endblock %}
+</body>
+</html>
+

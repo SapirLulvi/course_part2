@@ -1,0 +1,56 @@
+
+
+#GridContainer {
+    display: grid;
+    grid-template-areas:
+     'left left contactForm'
+     'left left contactForm'
+}
+
+#item1{
+    grid-area: left;
+    width: 100%;
+    height: 97vh;
+    border: 2px solid black;
+    padding-left: 5px;
+}
+
+
+#item2{
+    grid-area: contactForm;
+    width:100%;
+    height: 97vh;
+    padding-left: 5px;
+    border: 2px solid black;
+}
+
+*{
+    background-color: rgb(215, 183, 209);
+    font-family:sans-serif;
+}
+
+h1{
+    font-size: 20px;
+}
+h2{
+    font-size: 15px;
+}
+p{
+    font-size: 15px;
+}
+label{
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+/* התאמה למסך קטן*/
+@media only screen and (max-width: 700px) {
+
+   #GridContainer {
+    display: grid;
+    grid-template-areas:
+     'left'
+     'contactForm'
+}
+}

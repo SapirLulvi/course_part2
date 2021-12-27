@@ -1,0 +1,18 @@
+{% extends 'basic.html' %}
+{% block title %}Hobbies{% endblock %}
+{% block page_head_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/cv.css') }}">{% endblock %}
+{%  block details %}
+    {{  super() }}
+        <h1> My Hobbies</h1>
+    <h2>My name is: {{ fullName.firstN | default('First Name', true) |title()}} {{ fullName.lastN | default('First Name', true) | title()}}</h2>
+
+<h2>Hobbies:</h2>
+    <ul>
+        {% for hobby in HobbiesList %}
+            <li>{{ hobby | title() }}</li>
+        {%  endfor%}
+    </ul>
+{% endblock %}
+
+
+

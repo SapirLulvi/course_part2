@@ -3,6 +3,8 @@ from flask import Flask, render_template, redirect, url_for, request, session
 app = Flask(__name__)
 app.secret_key = '123'
 
+from assignment10.assignment10 import assignment10
+app.register_blueprint(assignment10)
 
 users = {'user1': {'name': 'Sapir', 'email': 'sapir@gmail.com'}, 'user2': {'name': 'Liel', 'email': 'liel@gmail.com'},
          'user3': {'name': 'Eliran', 'email': 'eliran@gmail.com'}, 'user4': {'name': 'Eden', 'email': 'eden@gmail.com'},

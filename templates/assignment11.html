@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+Req Forms
+{% endblock %}
+{% block page_head_js %} <script src="{{ url_for('static', filename='js/fetch_js.js') }}"></script>{% endblock %}
+
+{% block details %}
+    <h1>Users List</h1>
+     <form action="/assignment11/users">
+        <input type="submit" value="Get Users">
+    </form>
+    <br>
+
+    <h1>Req Frontend:</h1>
+    <input name="id2" type="number" id="id2">
+    <button onclick="getUserFrontend()">Get User</button>
+    <main> </main>
+    <script src="../static/js/fetch_js.js" ></script>
+    <br>
+
+    <h1>Req Backend</h1>
+    <form action="/assignment11/outer_source" method="get">
+        <input type="number" name="id">
+        <input type="submit" value="Get User">
+    </form>
+    {%  if user_dict != {} and user_dict != '' %}
+        <img src={{ user_dict.data.avatar }} alt="Profile_Picture"/>
+        <div>
+            <span>ID: {{ user_dict.data.id}}</span><br>
+            <span>Email: {{ user_dict.data.email}}</span><br>
+            <span>First Name: {{ user_dict.data.first_name }}</span><br>
+            <span>Last Name: {{ user_dict.data.last_name }}</span><br>
+            <br>
+        </div>
+    {% endif %}
+    <br>
+{% endblock %}
